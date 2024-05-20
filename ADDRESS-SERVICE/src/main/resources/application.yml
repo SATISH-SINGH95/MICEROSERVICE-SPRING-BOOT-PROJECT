@@ -1,0 +1,13 @@
+
+# eureka:
+#   instance:
+#     hostname: localhost
+
+#   client:
+#     register-with-eureka: true
+#     fetch-registry: true
+
+
+spring:
+  config:
+    import: configserver:http://localhost:8084

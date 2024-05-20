@@ -1,0 +1,50 @@
+
+server:
+  port: 8083
+
+spring:
+  application:
+    name: API-GATEWAY
+
+
+  config:
+    import: configserver:http://localhost:8084
+
+  # cloud:
+  #   gateway:
+  #     routes:
+  #       - id: USER-SERVICE
+  #         uri: lb://USER-SERVICE
+  #         predicates:
+  #           - Path=/users/**
+  #         filters:
+  #          - name: CircuitBreaker
+  #            args:
+  #              name: USER-SERVICE
+  #              fallbackuri: forward:/userServiceFallBack
+
+  #       - id: ADDRESS-SERVICE
+  #         uri: lb://ADDRESS-SERVICE
+  #         predicates:
+  #           - Path=/addresses/**
+  #         filters:
+  #          - name: CircuitBreaker
+  #            args:
+  #              name: ADDRESS-SERVICE
+  #              fallbackuri: forward:/addressServiceFallBack
+
+#Actuator property configuration
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
+
+
+
