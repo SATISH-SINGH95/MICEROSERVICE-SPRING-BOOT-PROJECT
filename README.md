@@ -54,7 +54,7 @@ User Service      Address Service
 - **Clone the repository:**
 
 ```bash
-git clone https://github.com/yourusername/microservices-spring-boot.git
+git clone https://github.com/SATISH-SINGH95/MICEROSERVICE.git
 cd microservices-spring-boot
 
 ```
